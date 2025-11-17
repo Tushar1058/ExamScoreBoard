@@ -1,4 +1,52 @@
-# Exam ScoreBoard - Firebase Setup Instructions
+# Exam ScoreBoard
+
+A clean, professional exam scoreboard application built with Firebase Realtime Database, featuring separate user and admin interfaces.
+
+## Features
+
+- **User Site**: View scores filtered by roll number (231030044)
+- **Admin Site**: Manage student scores with roll number-based filtering
+- **Subject-based Organization**: Separate theory subjects (T1, T2, T3, TA) and lab subjects (P1, P2, P3)
+- **SGPA Calculation**: Automatic SGPA calculation for all subjects
+- **Dark Theme**: Modern black UI with blue accents
+
+## Quick Start
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Tushar1058/ExamScoreBoard.git
+   cd ExamScoreBoard
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Update Firebase configuration in `app.js` with your Firebase project details
+
+4. Run development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open http://localhost:5173/ in your browser
+
+## Deployment
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+
+### Quick Deploy to Firebase Hosting:
+```bash
+npm run build
+firebase deploy --only hosting
+```
+
+Your site will be live at: `https://exam-scoreboard.web.app`
+
+---
+
+# Firebase Setup Instructions
 
 ## Step 1: Create a Firebase Project
 
