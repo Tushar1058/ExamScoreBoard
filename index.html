@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam ScoreBoard - User</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>Exam ScoreBoard</h1>
+                <p class="user-name">Tushar Punia</p>
+            </div>
+            <a href="admin.html" class="admin-link">Admin Login</a>
+        </header>
+        
+        <div class="selection-panel">
+            <div class="form-group">
+                <label for="batchSelect">Select Batch:</label>
+                <select id="batchSelect">
+                    <option value="">-- Select Batch --</option>
+                    <option value="A11">A11</option>
+                    <option value="A12">A12</option>
+                    <option value="A13">A13</option>
+                    <option value="A14">A14</option>
+                    <option value="A15">A15</option>
+                    <option value="A16">A16</option>
+                    <option value="A17">A17</option>
+                    <option value="A18">A18</option>
+                    <option value="A19">A19</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="semesterSelect">Select Semester:</label>
+                <select id="semesterSelect">
+                    <option value="">-- Select Semester --</option>
+                    <option value="EVEN2024">EVEN2024</option>
+                    <option value="ODD2025">ODD2025</option>
+                    <option value="EVEN2025">EVEN2025</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="scoreboard" class="scoreboard hidden">
+            <div class="scoreboard-header">
+                <h2 id="scoreboardTitle"></h2>
+                <button id="calculateSGPA" class="btn btn-primary">Calculate SGPA</button>
+            </div>
+            <div id="scoreboardContent"></div>
+            <div id="sgpaResult" class="sgpa-result hidden"></div>
+        </div>
+        
+        <div id="noData" class="no-data hidden">
+            <p>No data available for the selected batch and semester.</p>
+        </div>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script type="module" src="app.js"></script>
+    <script type="module" src="user.js"></script>
+</body>
+</html>
+

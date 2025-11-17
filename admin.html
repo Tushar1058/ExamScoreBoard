@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam ScoreBoard - Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="loginPage" class="login-page">
+            <div class="login-box">
+                <h1>Admin Login</h1>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="login-actions">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <a href="index.html" class="back-link">Back to User Site</a>
+                    </div>
+                    <div id="loginError" class="error-message hidden"></div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="adminDashboard" class="admin-dashboard hidden">
+            <header>
+                <h1>Admin Dashboard</h1>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </header>
+            
+            <div class="admin-controls">
+                <div class="form-group">
+                    <label for="adminBatchSelect">Select Batch:</label>
+                    <select id="adminBatchSelect">
+                        <option value="">-- Select Batch --</option>
+                        <option value="A11">A11</option>
+                        <option value="A12">A12</option>
+                        <option value="A13">A13</option>
+                        <option value="A14">A14</option>
+                        <option value="A15">A15</option>
+                        <option value="A16">A16</option>
+                        <option value="A17">A17</option>
+                        <option value="A18">A18</option>
+                        <option value="A19">A19</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adminSemesterSelect">Select Semester:</label>
+                    <select id="adminSemesterSelect">
+                        <option value="">-- Select Semester --</option>
+                        <option value="EVEN2024">EVEN2024</option>
+                        <option value="ODD2025">ODD2025</option>
+                        <option value="EVEN2025">EVEN2025</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adminSubjectSelect">Select Subject:</label>
+                    <select id="adminSubjectSelect">
+                        <option value="">-- Select Subject --</option>
+                        <option value="FORMAL_LANGUAGE_AUTOMATA_THEORY">FORMAL LANGUAGE & AUTOMATA THEORY</option>
+                        <option value="COMPUTER_ORGANIZATION_ARCHITECTURE">COMPUTER ORGANIZATION AND ARCHITECTURE</option>
+                        <option value="COMPUTER_GRAPHICS">COMPUTER GRAPHICS</option>
+                        <option value="PROJECT_MANAGEMENT_ENTREPRENEURSHIP">PROJECT MANAGEMENT AND ENTREPRENEURSHIP</option>
+                        <option value="INDIAN_CONSTITUTION">INDIAN CONSTITUTION</option>
+                        <option value="COMPUTER_ORGANIZATION_ARCHITECTURE_LAB">COMPUTER ORGANIZATION AND ARCHITECTURE LAB</option>
+                        <option value="COMPUTER_GRAPHICS_LAB">COMPUTER GRAPHICS LAB</option>
+                        <option value="MULTIMEDIA_LAB">MULTIMEDIA LAB</option>
+                        <option value="APPLIED_MATERIALS_SCIENCE">APPLIED MATERIALS SCIENCE</option>
+                        <option value="CLOUD_COMPUTING">CLOUD COMPUTING: CONCEPTS, TECHNOLOGY & ARCHITECTURE</option>
+                        <option value="CLOUD_COMPUTING_LAB">CLOUD COMPUTING: CONCEPTS, TECHNOLOGY & ARCHITECTURE LAB</option>
+                        <option value="LOGICAL_QUANTITATIVE_TECHNIQUES_I">LOGICAL AND QUANTITATIVE TECHNIQUES-I</option>
+                        <option value="PROGRAMMING_PRACTICES_I">PROGRAMMING PRACTICES-I</option>
+                    </select>
+                </div>
+                
+                <button id="loadDataBtn" class="btn btn-primary">Load Data</button>
+                <button id="addStudentBtn" class="btn btn-success">Add New Student</button>
+            </div>
+            
+            <div id="addStudentForm" class="add-student-form hidden">
+                <h2>Add New Student</h2>
+                <form id="studentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentRollNo">Roll Number:</label>
+                            <input type="text" id="studentRollNo" required>
+                        </div>
+                    </div>
+                    <div id="regularSubjectFields" class="subject-fields">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentT1">T1:</label>
+                                <input type="number" id="studentT1" min="0" max="100">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentT2">T2:</label>
+                                <input type="number" id="studentT2" min="0" max="100">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentT3">T3:</label>
+                                <input type="number" id="studentT3" min="0" max="100">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentTA">TA:</label>
+                                <input type="number" id="studentTA" min="0" max="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="labSubjectFields" class="subject-fields hidden">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentP1">P1:</label>
+                                <input type="number" id="studentP1" min="0" max="100">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentP2">P2:</label>
+                                <input type="number" id="studentP2" min="0" max="100">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentP3">P3:</label>
+                                <input type="number" id="studentP3" min="0" max="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Add Student</button>
+                        <button type="button" id="cancelAddBtn" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="adminScoreboard" class="admin-scoreboard hidden">
+                <h2 id="adminScoreboardTitle"></h2>
+                <div id="adminScoreboardContent"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script type="module" src="app.js"></script>
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
+
